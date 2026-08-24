@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Memories ❤️</title>
+  <link rel="stylesheet" href="style.css?v=3">
+</head>
+<body>
+  <main class="memories-section page-enter">
+    <header class="memories-heading">
+      <p class="small-text">Little Moments, Big Memories</p>
+      <h1>Our Memories ❤️</h1>
+      <p>Tak kisah dekat mana kita pergi atau apa yang kita buat, every moment feels special bila I dapat lalui semua tu dengan you. Ini cuma sebahagian kecil daripada memori kita, and I can’t wait to create so many more with you, baby.</p>
+    </header>
+
+    <section class="memory-collection" aria-label="Our photo and video memories">
+      <div class="memory-collage">
+        <div class="collection-photo collection-photo-main">
+          <img class="memory-image" src="images/memory-23.jpeg" alt="One of our memories together">
+          <div class="photo-placeholder"><span class="memory-icon">❤️</span><span class="photo-label">Our Memory</span></div>
+        </div>
+        <div class="collection-photo">
+          <img class="memory-image" src="images/memory-05.jpeg" alt="One of our memories together">
+          <div class="photo-placeholder"><span class="memory-icon">❤️</span><span class="photo-label">Our Memory</span></div>
+        </div>
+        <div class="collection-photo">
+          <img class="memory-image" src="images/memory-12.jpeg" alt="One of our memories together">
+          <div class="photo-placeholder"><span class="memory-icon">❤️</span><span class="photo-label">Our Memory</span></div>
+        </div>
+        <div class="collection-photo">
+          <img class="memory-image" src="images/memory-08.jpeg" alt="One of our memories together">
+          <div class="photo-placeholder"><span class="memory-icon">❤️</span><span class="photo-label">Our Memory</span></div>
+        </div>
+        <div class="collection-photo">
+          <img class="memory-image" src="images/memory-22.jpeg" alt="One of our memories together">
+          <div class="photo-placeholder"><span class="memory-icon">❤️</span><span class="photo-label">Our Memory</span></div>
+        </div>
+      </div>
+
+      <div class="collection-copy">
+        <p class="collection-kicker">Us, in little pieces</p>
+        <h2>Every picture has a story, and every story has you.</h2>
+        <p>Setiap gambar ni simpan satu moment yang mungkin nampak simple, tapi sangat bermakna untuk I. Sebab dalam setiap satu, ada senyuman you, ada cerita kita, and ada you di sisi I. ❤️</p>
+        <button class="memory-gallery-button" type="button" data-gallery="all">View All Our Photos <span>→</span></button>
+      </div>
+
+      <div class="collection-videos">
+        <p class="collection-videos-title">Our moments in motion 🎬</p>
+        <div class="collection-video-grid">
+          <div class="memory-video-wrap"><video class="memory-video" controls playsinline preload="metadata" poster="images/memory-06.jpeg"><source src="media/memory-video-01.mp4" type="video/mp4"></video><div class="video-placeholder"><span>🎬</span>Our Memory</div></div>
+          <div class="memory-video-wrap"><video class="memory-video" controls playsinline preload="metadata" poster="images/memory-15.jpeg"><source src="media/memory-video-02.mp4" type="video/mp4"></video><div class="video-placeholder"><span>🎬</span>Our Memory</div></div>
+        </div>
+      </div>
+    </section>
+
+    <p class="memories-note">My favourite memories aren’t places or things—they’re every moment I get to share with you. ❤️</p>
+    <nav class="page-navigation" aria-label="Page navigation">
+      <a class="page-button secondary-button" href="timeline.html">← Back</a>
+      <a class="page-button" href="letter.html">Continue Our Story →</a>
+    </nav>
+  </main>
+
+  <div class="gallery-modal" id="gallery-modal" role="dialog" aria-modal="true" aria-labelledby="gallery-title" hidden>
+    <section class="gallery-panel">
+      <button class="gallery-close" id="gallery-close" type="button" aria-label="Close photo gallery">×</button>
+      <p class="gallery-kicker">Our Little Gallery</p>
+      <h2 id="gallery-title">Our Memories ❤️</h2>
+      <div class="gallery-stage">
+        <img class="gallery-photo" id="gallery-photo" src="" alt="">
+        <button class="gallery-arrow gallery-prev" id="gallery-prev" type="button" aria-label="Previous photo">‹</button>
+        <button class="gallery-arrow gallery-next" id="gallery-next" type="button" aria-label="Next photo">›</button>
+      </div>
+      <p class="gallery-caption" id="gallery-caption"></p>
+      <p class="gallery-counter" id="gallery-counter"></p>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

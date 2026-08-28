@@ -622,25 +622,48 @@ document.addEventListener("DOMContentLoaded", () => {
     "images/random-15.jpeg"
   ];
 
-  const numImages = floatingImages.length; 
+  const totalImages = floatingImages.length * 2; // Gandakan jadi 30 keping
+  const cols = 6;
+  const rows = 5;
+  const cellWidth = 100 / cols; 
+  const cellHeight = 100 / rows;
   
-  for (let i = 0; i < numImages; i++) {
-    const img = document.createElement("img");
-    img.src = floatingImages[i % floatingImages.length];
-    img.className = "random-floating-image";
-    
-    const size = Math.floor(Math.random() * 80) + 120;
-    img.style.width = `${size}px`;
-    img.style.height = `${size}px`;
-    
-    const posX = Math.floor(Math.random() * 80) + 5; 
-    const posY = Math.floor(Math.random() * 80) + 5; 
-    img.style.left = `${posX}vw`;
-    img.style.top = `${posY}vh`;
-    
-    const rotation = Math.floor(Math.random() * 60) - 30;
-    img.style.transform = `rotate(${rotation}deg)`;
-    
-    document.body.appendChild(img);
+  // Campurkan gambar (shuffle)
+  let imageList = [];
+  for(let i=0; i<totalImages; i++) {
+    imageList.push(floatingImages[i % floatingImages.length]);
+  }
+  imageList.sort(() => Math.random() - 0.5);
+
+  let count = 0;
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
+      if (count >= totalImages) break;
+
+      const img = document.createElement("img");
+      img.src = imageList[count];
+      img.className = "random-floating-image";
+      
+      // Saiz secara rawak (100px ke 170px)
+      const size = Math.floor(Math.random() * 70) + 100; 
+      img.style.width = `${size}px`;
+      img.style.height = `${size}px`;
+      
+      // Kedudukan (grid + sikit pergerakan rawak/jitter supaya nampak natural)
+      const jitterX = Math.random() * (cellWidth * 0.5); 
+      const jitterY = Math.random() * (cellHeight * 0.5); 
+      
+      const posX = (c * cellWidth) + jitterX; 
+      const posY = (r * cellHeight) + jitterY; 
+      
+      img.style.left = `${posX}vw`;
+      img.style.top = `${posY}vh`;
+      
+      const rotation = Math.floor(Math.random() * 80) - 40; 
+      img.style.transform = `rotate(${rotation}deg)`;
+      
+      document.body.appendChild(img);
+      count++;
+    }
   }
 });

@@ -602,3 +602,35 @@ document.addEventListener("keydown", (event) => {
     closeFinalSurprise();
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const floatingImages = [
+    "images/random-1.jpeg",
+    "images/random-2.jpeg",
+    "images/random-3.jpeg",
+    "images/random-4.jpeg",
+    "images/random-5.jpeg"
+  ];
+
+  const numImages = 5; 
+  
+  for (let i = 0; i < numImages; i++) {
+    const img = document.createElement("img");
+    img.src = floatingImages[i % floatingImages.length];
+    img.className = "random-floating-image";
+    
+    const size = Math.floor(Math.random() * 80) + 120;
+    img.style.width = `${size}px`;
+    img.style.height = `${size}px`;
+    
+    const posX = Math.floor(Math.random() * 80) + 5; 
+    const posY = Math.floor(Math.random() * 80) + 5; 
+    img.style.left = `${posX}vw`;
+    img.style.top = `${posY}vh`;
+    
+    const rotation = Math.floor(Math.random() * 60) - 30;
+    img.style.transform = `rotate(${rotation}deg)`;
+    
+    document.body.appendChild(img);
+  }
+});

@@ -609,10 +609,20 @@ document.addEventListener("DOMContentLoaded", () => {
     "images/random-2.jpeg",
     "images/random-3.jpeg",
     "images/random-4.jpeg",
-    "images/random-5.jpeg"
+    "images/random-5.jpeg",
+    "images/random-6.jpeg",
+    "images/random-7.jpeg",
+    "images/random-8.jpeg",
+    "images/random-9.jpeg",
+    "images/random-10.jpeg",
+    "images/random-11.jpeg",
+    "images/random-12.jpeg",
+    "images/random-13.jpeg",
+    "images/random-14.jpeg",
+    "images/random-15.jpeg"
   ];
 
-  const numImages = 5; 
+  const numImages = floatingImages.length; 
   
   for (let i = 0; i < numImages; i++) {
     const img = document.createElement("img");
